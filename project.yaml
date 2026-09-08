@@ -1,5 +1,5 @@
-name: Ransomware Behavioral Detection Engine
-slug: ransomware-behavioral-detection
+name: RansomWatch
+slug: ransomwatch
 
 category: cybersecurity # cybersecurity | software | ai-ml | research | ctf | experiments | archived
 subcategory: "Independent security-tooling project"

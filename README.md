@@ -1,4 +1,4 @@
-# Ransomware Behavioral Detection Engine
+# RansomWatch — Ransomware Behavioral Detection Engine
 
 A passive, host-based behavioral detector for ransomware-like file
 transformations. Analyzes live or replayed filesystem telemetry with
