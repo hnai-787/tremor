@@ -1,0 +1,67 @@
+# RansomWatch default detection configuration -- "research-inspired-v1".
+#
+# These are starting parameters informed by real prior art (Objective-See's
+# RansomWhere? and CryptoDrop), NOT a universal definition of what
+# ransomware looks like. See PROJECT_NOTES.md for exactly which value came
+# from which source, and which are this project's own operational policy.
+
+detection:
+  # Sliding window used by every rule below. Mirrors RansomWhere?'s 30-second
+  # per-process pruning window.
+  window_seconds: 30.0
+
+  # entropy-transition-burst / high-entropy-output-burst: number of
+  # distinct files an actor must transform within the window.
+  # RansomWhere?-inspired (their real threshold is >=5 encrypted files/30s).
+  transformed_files_threshold: 5
+
+  # entropy-transition-burst: minimum increase (bits/byte) in a file's
+  # max sampled-region entropy to count as a "transformation". CryptoDrop
+  # uses 0.1 for a different metric (weighted process read/write entropy);
+  # reused here as a starting point for a different, per-file measurement.
+  entropy_delta_threshold: 0.1
+
+  # high-entropy-output-burst: absolute entropy (bits/byte) above which a
+  # region counts as "high entropy" regardless of what it looked like
+  # before. RansomWhere?-inspired (~7.95).
+  entropy_absolute_threshold: 7.95
+
+  # extension-churn: number of pre-existing files renamed with a changed
+  # extension within the window. This project's own operational policy --
+  # no published vendor threshold exists.
+  rename_churn_threshold: 10
+
+  # directory-spread: number of distinct parent directories touched by one
+  # actor within the window. This project's own operational policy.
+  directory_spread_threshold: 8
+
+  # delete-replace: number of distinct create-sibling -> delete-original ->
+  # rename-back sequences within the window. This project's own policy.
+  delete_replace_threshold: 5
+
+  # mass-delete: number of deletes within the window before this
+  # (supporting-only, never sufficient alone) signal is recorded as
+  # evidence. This project's own operational policy.
+  mass_delete_threshold: 15
+
+  # ransom-note-spread: a newly created file at or under this size is a
+  # ransom-note candidate; it must appear in at least
+  # ransom_note_min_directories distinct directories within the window.
+  ransom_note_max_size_bytes: 10240
+  ransom_note_min_directories: 3
+
+  # canary-mutation: paths that have no ordinary reason to change. Empty by
+  # default -- this rule only ever fires if you configure at least one.
+  canary_paths: []
+
+  # Alert coalescing (same design as DeauthGuard): how long an active rule
+  # must stop firing before it's dropped from an incident's active set,
+  # and the minimum time between repeated "updated" alerts for an
+  # unchanged active set.
+  cooldown_seconds: 30.0
+  update_interval_seconds: 1.0
+
+  # Live-source entropy sampling: bytes read per region (head/middle/tail).
+  # An engineering cost/coverage tradeoff, not a standard -- see README
+  # "Limitations" for the partial-encryption blind spot this creates.
+  sample_bytes: 65536

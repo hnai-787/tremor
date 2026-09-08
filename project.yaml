@@ -1,0 +1,76 @@
+name: Ransomware Behavioral Detection Engine
+slug: ransomware-behavioral-detection
+
+category: cybersecurity # cybersecurity | software | ai-ml | research | ctf | experiments | archived
+subcategory: "Independent security-tooling project"
+
+status: completed # idea | active | paused | completed | archived
+
+visibility: public # public | private | unlisted — flip to public deliberately
+
+description:
+  short: "A passive, host-based ransomware behavioral-detection engine (RansomWatch) -- explainable sliding-window rules grounded in RansomWhere?/CryptoDrop research, no malware anywhere in the repo."
+  long: |
+    Replaces an earlier, partially-completed static malware-analysis
+    project in this workspace. RansomWatch is a passive, host-based
+    behavioral detector for ransomware-like file transformations: it
+    analyzes live-monitored directories or replayed JSONL event logs
+    using seven independent, explainable detection rules (entropy
+    transitions, bulk renames, extension churn, cross-directory spread,
+    delete-and-replace sequences, ransom-note-like artifacts, and
+    decoy-file mutation), with severity computed from which rules are
+    jointly active rather than a numeric score.
+    Every default threshold is grounded in real, cited prior art --
+    Objective-See's open-source RansomWhere? detector and the CryptoDrop
+    research (Scaife et al., ICDCS 2016) -- and documented as such rather
+    than presented as an invented or universal standard. The test suite
+    (39 pytest tests, fully offline) includes real documented
+    false-positive classes (a 7-Zip-equivalent case, CryptoDrop's own
+    benign batch-image-processing benchmark, and a deliberately-crossing
+    backup-software case kept as an honestly disclosed limitation) and
+    real documented evasions (low-and-slow, partial-encryption sampling
+    miss, entropy-reshaping, per-process splitting) that the detector is
+    expected NOT to catch. No real ransomware, encryption routine, or
+    malware sample exists anywhere in the repository.
+
+technologies: ["Python", "PyYAML", "watchdog", "pytest", "Ruff", "GitHub Actions"]
+tags: ["cybersecurity", "ransomware", "behavioral-detection", "intrusion-detection", "malware-defense"]
+
+repository:
+  provider: github
+  visibility: public
+  sync: true # whether `workspace github status` should track this repo
+
+portfolio:
+  enabled: true # flip to true only when the project is ready to be public-facing
+  featured: true
+
+documentation:
+  readme: true
+  case_study: false
+
+dates:
+  started: "2026-09-09" # YYYY-MM-DD
+  completed: "2026-09-09"
+
+links:
+  github: null
+  demo: null
+  documentation: null
+
+assets:
+  hero: null
+  screenshots: []
+
+achievements: [] # ids referencing professional/achievements/achievements.yaml
+
+metrics:
+  - label: "ransomwatch: pytest tests passing (synthetic JSONL fixtures)"
+    value: "39/39"
+    verified: true
+  - label: "ransomwatch: Ruff lint issues"
+    value: "0"
+    verified: true
+  - label: "Detection rules, each independently evidence-carrying"
+    value: "7 core + 1 supporting"
+    verified: true

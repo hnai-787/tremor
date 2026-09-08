@@ -1,0 +1,32 @@
+name: ransomwatch-ci
+
+on:
+  push:
+    paths:
+      - "ransomwatch/**"
+      - ".github/workflows/ransomwatch-ci.yml"
+  pull_request:
+    paths:
+      - "ransomwatch/**"
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: ransomwatch
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: pip install -e ".[dev]"
+
+      - name: Lint
+        run: ruff check src tests tools
+
+      - name: Test
+        run: pytest -q

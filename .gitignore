@@ -1,0 +1,12 @@
+# Copy this to .gitignore inside a new independent project repo.
+.env
+.env.*
+node_modules/
+dist/
+build/
+__pycache__/
+.venv/
+*.egg-info/
+*.log
+.DS_Store
+Thumbs.db

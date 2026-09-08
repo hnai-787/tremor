@@ -1,0 +1,1 @@
+{"timestamp": 0.5, "operation": "create", "path": "/docs/backup.7z", "previous_path": null, "size_before": null, "size_after": 9000000, "entropy_before": null, "entropy_after": {"head": 7.98, "middle": 7.97, "tail": 7.99}, "actor": {"id": "proc-7z", "pid": 300, "executable": "7z.exe"}}
