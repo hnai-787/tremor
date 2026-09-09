@@ -8,7 +8,7 @@ a partially-completed static malware-analysis exercise. Rather than
 another one-off "analyze this binary" project, this builds something
 reusable: a real behavioral detector for ransomware-like file
 transformation, following the same pattern used for
-[Project #14's DeauthGuard](../wireless-deauthentication-analysis/deauthguard/README.md)
+[Squall](../squall/deauthguard/README.md)
 (external research first, then a small, tested, explainable tool grounded
 in that research -- never an invented heuristic).
 

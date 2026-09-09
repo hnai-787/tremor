@@ -1,5 +1,5 @@
-name: RansomWatch
-slug: ransomwatch
+name: Tremor
+slug: tremor
 
 category: cybersecurity # cybersecurity | software | ai-ml | research | ctf | experiments | archived
 subcategory: "Independent security-tooling project"
@@ -54,12 +54,12 @@ dates:
   completed: "2026-09-09"
 
 links:
-  github: https://github.com/Hussain-Ali-787/ransomwatch
+  github: https://github.com/Hussain-Ali-787/tremor
   demo: null
   documentation: null
 
 assets:
-  hero: assets/brand/ransomwatch-readme-banner.png
+  hero: assets/brand/tremor-readme-banner.png
   screenshots: []
 
 achievements: [] # ids referencing professional/achievements/achievements.yaml

@@ -1,6 +1,8 @@
-# RansomWatch — Ransomware Behavioral Detection Engine
+# Tremor — Ransomware Behavioral Detection Engine
 
-![ransomwatch banner](assets/brand/ransomwatch-readme-banner.png)
+![tremor banner](assets/brand/tremor-readme-banner.png)
+
+*Ships as the `ransomwatch` CLI/library — see below.*
 
 
 A passive, host-based behavioral detector for ransomware-like file
@@ -24,7 +26,7 @@ actual industry and academic prior art -- Objective-See's open-source
 **RansomWhere?** detector and the **CryptoDrop**/**ShieldFS** research
 lineage -- following the same "build a real, tested tool, not a report"
 pattern used elsewhere in this workspace (see
-[Project #14's DeauthGuard](../wireless-deauthentication-analysis/deauthguard/README.md),
+[Squall](../squall/deauthguard/README.md),
 the closest sibling in spirit: a passive behavioral detector for a
 different attack class).
 
@@ -120,7 +122,7 @@ transformation") is `high`; a bulk transformation combined with
 
 ## How It Works
 
-![How ransomwatch works](assets/brand/ransomwatch-how-it-works.png)
+![How tremor works](assets/brand/tremor-how-it-works.png)
 
 ## Repository Structure
 
