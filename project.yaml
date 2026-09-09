@@ -59,7 +59,7 @@ links:
   documentation: null
 
 assets:
-  hero: null
+  hero: assets/brand/ransomwatch-readme-banner.png
   screenshots: []
 
 achievements: [] # ids referencing professional/achievements/achievements.yaml

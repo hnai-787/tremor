@@ -1,5 +1,8 @@
 # RansomWatch — Ransomware Behavioral Detection Engine
 
+![ransomwatch banner](assets/brand/ransomwatch-readme-banner.png)
+
+
 A passive, host-based behavioral detector for ransomware-like file
 transformations. Analyzes live or replayed filesystem telemetry with
 explainable, sliding-window rules -- entropy transitions, bulk renames,
@@ -114,6 +117,10 @@ transformation") is `high`; a bulk transformation combined with
    found; batch image processing) and correctly misses the evasions it's
    honestly not designed to catch (low-and-slow, partial encryption,
    entropy reshaping, multi-process splitting).
+
+## How It Works
+
+![How ransomwatch works](assets/brand/ransomwatch-how-it-works.png)
 
 ## Repository Structure
 
