@@ -2,7 +2,7 @@
 
 ## Problem / Motivation
 
-This replaces an earlier project in this workspace's coursework migration
+This replaces an earlier project in this workspace
 (`netsupport-rat-analysis`) that was removed by explicit decision -- it was
 a partially-completed static malware-analysis exercise. Rather than
 another one-off "analyze this binary" project, this builds something
