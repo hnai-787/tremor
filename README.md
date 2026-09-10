@@ -127,7 +127,7 @@ transformation") is `high`; a bulk transformation combined with
 ## Repository Structure
 
 ```text
-ransomware-behavioral-detection/
+tremor/
   README.md, PROJECT.md, CHANGELOG.md, project.yaml
   ransomwatch/                    the detection engine
     README.md                    design writeup, rules table, limitations
@@ -142,7 +142,7 @@ ransomware-behavioral-detection/
 ## Setup Instructions
 
 ```bash
-cd ransomware-behavioral-detection/ransomwatch
+cd ransomwatch
 python -m venv .venv && source .venv/bin/activate   # or .venv\Scripts\activate on Windows
 pip install -e ".[dev]"
 ```
@@ -150,7 +150,7 @@ pip install -e ".[dev]"
 ## Usage
 
 ```bash
-cd ransomware-behavioral-detection/ransomwatch
+cd ransomwatch
 ransomwatch analyze fixtures/suspicious/fast_transform.jsonl
 ransomwatch analyze fixtures/benign/backup_borderline.jsonl --json
 ransomwatch monitor ~/Documents --canary ~/Documents/.canary/decoy.docx  # requires: pip install -e ".[live]"
